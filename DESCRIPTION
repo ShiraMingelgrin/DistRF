@@ -1,0 +1,12 @@
+Package: DistRF
+Type: Package
+Title: Random Forests for Imbalanced Classification
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: Shira Mingelgrin <sm2267@cornell.edu>
+Description: Adding topological information to improve imbalance data classification when using Random Forests. Using likelihood nad euclidean distance as additional information to classify.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports: ggplot2
+RoxygenNote: 7.2.0
