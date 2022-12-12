@@ -15,7 +15,7 @@ devtools::install_github("ShiraMingelgrin/DistRF")
 You can subsequently load the package with the usual R commands:
 
 ```r
-library(iRF)
+library(DistRF)
 ```
 
 ### Workflow Overview
