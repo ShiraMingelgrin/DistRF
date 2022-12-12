@@ -18,6 +18,5 @@ You can subsequently load the package with the usual R commands:
 library(DistRF)
 ```
 
-### Workflow Overview
 
 
