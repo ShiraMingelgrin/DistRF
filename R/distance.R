@@ -1,12 +1,12 @@
-#' Title
+#' Euclidean distance
 #'
-#' @param data All predictors
-#' @param y Outcome variable to be classified
+#' Calculate the euclidean distance of the features in \code{data}
+#' of each observation from the center of the majority class
+#' @param data the complete set of features (both classes)
+#' @param y outcome variable to be classified
 #'
-#' @return
-#' @export
-#'
-#' @examples
+#' @return a vector containing the distances
+
 distance <- function(data,y){
   n <- nrow(data)
   p <- ncol(data)

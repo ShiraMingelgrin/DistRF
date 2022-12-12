@@ -2,13 +2,22 @@
 % Please edit documentation in R/acc_meas.R
 \name{acc_meas}
 \alias{acc_meas}
-\title{Title}
+\title{Accuracy measures}
 \usage{
 acc_meas(tab)
 }
 \arguments{
-\item{tab}{Confusion Table with prediction as columns}
+\item{tab}{Confusion matrix with prediction as columns}
+}
+\value{
+a list containing the following entries
+\itemize{
+   \item{True positive rate}
+   \item{True negative rate}
+   \item{Area under the curve}
+   \item{ggplot object for the ROC curve}
+ }
 }
 \description{
-Title
+Accuracy measures
 }

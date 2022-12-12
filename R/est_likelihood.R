@@ -1,12 +1,13 @@
-#' Title
+#' Estimate log-likelihood
 #'
-#' @param data All predictors
-#' @param y Outcome variable to be classified
+#' Estimate the log-likelihood of each observation originating from the joint distribution of the features in \code{data} for the majority class
 #'
-#' @return
-#' @export
+#' @param data the complete set of features (both classes)
+#' @param y outcome variable to be classified
 #'
-#' @examples
+#' @return a vector containing the log-likelihood estimated
+
+
 est_likelihood <- function(data,y){
   n <- nrow(data)
   p <- ncol(data)

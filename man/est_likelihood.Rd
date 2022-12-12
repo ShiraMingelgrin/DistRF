@@ -2,15 +2,18 @@
 % Please edit documentation in R/est_likelihood.R
 \name{est_likelihood}
 \alias{est_likelihood}
-\title{Title}
+\title{Estimate log-likelihood}
 \usage{
 est_likelihood(data, y)
 }
 \arguments{
-\item{data}{All predictors}
+\item{data}{the complete set of features (both classes)}
 
-\item{y}{Outcome variable to be classified}
+\item{y}{outcome variable to be classified}
+}
+\value{
+a vector containing the log-likelihood estimated
 }
 \description{
-Title
+Estimate the log-likelihood of each observation originating from the joint distribution of the features in \code{data} for the majority class
 }

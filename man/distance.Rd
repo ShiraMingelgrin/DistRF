@@ -2,15 +2,19 @@
 % Please edit documentation in R/distance.R
 \name{distance}
 \alias{distance}
-\title{Title}
+\title{Euclidean distance}
 \usage{
 distance(data, y)
 }
 \arguments{
-\item{data}{All predictors}
+\item{data}{the complete set of features (both classes)}
 
-\item{y}{Outcome variable to be classified}
+\item{y}{outcome variable to be classified}
+}
+\value{
+a vector containing the distances
 }
 \description{
-Title
+Calculate the euclidean distance of the features in \code{data}
+of each observation from the center of the majority class
 }

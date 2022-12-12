@@ -1,11 +1,14 @@
-#' Title
+#' Accuracy measures
 #'
-#' @param tab Confusion Table with prediction as columns
+#' @param tab Confusion matrix with prediction as columns
 #'
-#' @return
-#' @export
-#'
-#' @examples
+#' @return a list containing the following entries
+#' \itemize{
+#'    \item{True positive rate}
+#'    \item{True negative rate}
+#'    \item{Area under the curve}
+#'    \item{ggplot object for the ROC curve}
+#'  }
 acc_meas <- function(tab){
   tpr <- tab[2,2]/sum(tab[2,1:2])
   tnr <- tab[1,1]/sum(tab[1,1:2])
