@@ -7,10 +7,10 @@
 acc_meas(tab)
 }
 \arguments{
-\item{tab}{Confusion matrix with prediction as columns}
+\item{tab}{confusion matrix with prediction as columns}
 }
 \value{
-a list containing the following entries
+A list containing the following entries
 \itemize{
    \item{True positive rate}
    \item{True negative rate}
@@ -19,5 +19,5 @@ a list containing the following entries
  }
 }
 \description{
-Accuracy measures
+Provides measures to evaluate the performance of the classifier.
 }

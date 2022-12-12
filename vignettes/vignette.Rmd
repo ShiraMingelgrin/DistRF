@@ -1,0 +1,68 @@
+## Distance added to Random Forests (DistRF)
+
+The R package `DistRF`The R package `DistRF` calculates euclidean distance as well as log-likelihood to
+improve classification when handling imbalanced data. In addition, the package provides tools to evaluate
+the performance of the classifier considering imbalanced data. The measures available are True positive rate,
+True negative rate, Area under the curve and ROC curve.
+
+
+`DistRF` can be loaded using the `library` command:
+```{r, message=FALSE}
+library(DistRF)
+```
+
+
+I simulated some data for a binary classification where `x1` is continuous and `x2` is categorical. 
+
+```{r seed_random}
+# set seed for random number generation
+set.seed(1231)                           
+```
+
+```{r simulate_data}
+  # simulate data for classification
+  n <- 10000
+  x1 <- rnorm(n, 0, 2)
+  x2 <- rnorm(n,-2,2)
+
+  e <- rnorm(n,sd = 2)
+  y <- as.factor((x2-sin(3*x1)+2*x1-6+e)>0) 
+  data <- data.frame(y,x1,x2=cut(x2,c(-Inf,-4,-2,0,Inf)))
+  
+  head(data)
+```
+
+
+
+###  A. Add euclidean distance
+```{r dist}
+data$dist <- DistRF::distance(data[,c("x1","x2")],data$y)
+```
+
+
+###  B. Add log-likelihood
+```{r loglik}
+data$loglik <- DistRF::est_likelihood(data[,c("x1","x2")],data$y)
+```
+
+
+### C. Evaluate performance of Random Forest with no additional topological information
+
+```{r evaluate1}
+mod1 <- randomForest::randomForest(y~x1+x2,data = data)
+acc_meas(mod1$confusion[,1:2])
+```
+
+### Evaluate performance of Random Forest with euclidean distance 
+
+```{r evaluate2}
+mod2 <- randomForest::randomForest(y~x1+x2+dist,data = data)
+acc_meas(mod2$confusion[,1:2])
+```
+
+### Evaluate performance of Random Forest with  log-likelihood
+
+```{r evaluate3}
+mod3 <- randomForest::randomForest(y~x1+x2+loglik,data = data)
+acc_meas(mod3$confusion[,1:2])
+```

@@ -1,8 +1,9 @@
 #' Accuracy measures
 #'
-#' @param tab Confusion matrix with prediction as columns
+#'Provides measures to evaluate the performance of the classifier.
+#' @param tab confusion matrix with prediction as columns
 #'
-#' @return a list containing the following entries
+#' @return A list containing the following entries
 #' \itemize{
 #'    \item{True positive rate}
 #'    \item{True negative rate}
