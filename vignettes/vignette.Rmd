@@ -33,7 +33,6 @@ set.seed(1231)
 ```
 
 
-
 ###  A. Add euclidean distance
 ```{r dist}
 data$dist <- DistRF::distance(data[,c("x1","x2")],data$y)
